@@ -31,3 +31,15 @@ only in development mode.
 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 specifications.
 1. `git` formatted patches are preferred.
+
+### Fixed broken app 
+
+1. Fixed `app.py` by mispelled route `loogin` to login 
+2. Rewrite `dockerfile` to follow best practice 
+3. Adding `gunicorn` to requirements.txt
+4. Fixed `nginx.conf` to  match docker-compose.yml for `keycloak port 8080 instead of 8090 which produce error 502 Bad Gateway` .
+5. I logged in app and created user . After I logged in with user created redirect to Logged in page
+6. Created .env file for keycloak passwd and postgres passwd . 
+
+## In order to run this in production we must set up a kubernetes cluster and write Helm charts for deploying to k8s cluster . Also we must use secret in kubernetes to avoid to put sensitive information in docker-compose file .  
+
